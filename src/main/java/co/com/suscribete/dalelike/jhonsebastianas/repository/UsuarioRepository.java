@@ -36,4 +36,13 @@ public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Long> {
             "(MONTH(CURRENT_DATE) = MONTH(u.fechaNacimiento) AND DAY(CURRENT_DATE) < DAY(u.fechaNacimiento)) " +
             "THEN 1 ELSE 0 END) < :edad")
     List<UsuarioEntity> findUsuariosMenores(@Param("edad") int edad);
+
+    /**
+     *
+     *
+     * @author <a href="https://www.jhonsebastianas.com/">Sebastian Agudelo</a></br>
+     * @param activo
+     * @return
+     */
+    long countByActivo(boolean activo);
 }

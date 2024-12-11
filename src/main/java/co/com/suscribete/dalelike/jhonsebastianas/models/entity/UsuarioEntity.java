@@ -22,6 +22,9 @@ public class UsuarioEntity {
     @Column(name = "IMAGEN_PERFIL")
     private Byte imagenPerfil;
 
+    @Column(name = "ACTIVO", nullable = false)
+    private boolean activo;
+
     public Long getIdUsuario() {
         return idUsuario;
     }
@@ -52,5 +55,13 @@ public class UsuarioEntity {
 
     public void setImagenPerfil(Byte imagenPerfil) {
         this.imagenPerfil = imagenPerfil;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 }
